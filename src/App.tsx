@@ -1,14 +1,14 @@
-import './App.css';
-import Gallery from './components/Gallery';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import MainPage from "./components/MainPage";
+import Details from "./components/components_detail/Details";
 
-function App() {
-
+export default function App() {
     return (
-        <div className="App">
-            <h1>The Rick and Morty gallery</h1>
-            <Gallery />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="details/:characterId" element={<Details />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
-
-export default App;

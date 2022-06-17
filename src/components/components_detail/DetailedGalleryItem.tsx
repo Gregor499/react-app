@@ -1,12 +1,11 @@
-import {Character} from "../model"
-import './GalleryItem.css';
 import {Link} from "react-router-dom";
+import {Character} from "../../model";
 
 interface GalleryItemProps {
     character: Character
 }
 
-export default function GalleryItem(props: GalleryItemProps) {
+export default function DetailedGalleryItem(props: GalleryItemProps) {
     return (
         <div className="gallery-item">
             <div className="image-wrapper">
@@ -23,7 +22,16 @@ export default function GalleryItem(props: GalleryItemProps) {
                     <span className="label">Species:</span> {props.character.species}
                 </div>
                 <div>
-                    <Link to="/details/:characterId">Details</Link>
+                    <span className="label">Species:</span> {props.character.origin.originName}
+                </div>
+                <div>
+                    <span className="label">Species:</span> {props.character.origin.originUrl}
+                </div>
+                <div>
+                    <span className="label">Species:</span> {props.character.location.locationName}
+                </div>
+                <div>
+                    <span className="label">Species:</span> {props.character.location.locationUrl}
                 </div>
             </div>
         </div>
